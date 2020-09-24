@@ -1,0 +1,36 @@
+version: 2.1
+orbs:
+  slack: circleci/slack@3.4.2
+  shellcheck: circleci/shellcheck@2.0.0
+jobs:
+  sanity-check:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: setup
+          command: sbin/setup.sh
+      - run:
+          name: tut-3
+          command: sbin/tut-3.sh
+      - slack/status:
+          fail_only: true
+workflows:
+  on-push:
+    jobs:
+      - sanity-check
+  lint:
+    jobs:
+      - shellcheck/check
+  nightly:
+    triggers:
+    - schedule:
+        cron: "0 10 * * *" # 6am EST
+        filters:
+          branches:
+            only:
+              - master
+    jobs:
+      - sanity-check
