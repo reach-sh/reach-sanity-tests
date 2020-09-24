@@ -10,7 +10,7 @@ jobs:
       image: ubuntu-1604:202007-01
     steps:
       - checkout
-      - setup_remote_docker
+      # - setup_remote_docker
       - run:
           name: setup
           command: sbin/setup.sh
