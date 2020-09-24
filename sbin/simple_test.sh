@@ -1,4 +1,9 @@
 #!/bin/sh
 set -ex
+
+DIR="$1"
+shift
+
 sbin/test_with_files.sh \
-  "$1" index.mjs index.rsh
+  "$DIR" index.mjs index.rsh \
+  "$@"

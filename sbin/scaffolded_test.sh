@@ -1,5 +1,9 @@
 #!/bin/sh
 set -ex
-sbin/test_with_files.sh \
-  "$1" index.mjs index.rsh \
-  Dockerfile Makefile docker-compose.yml package.json
+
+DIR="$1"
+shift
+
+sbin/simple_test.sh "$DIR" \
+  Dockerfile Makefile docker-compose.yml package.json \
+  "$@"
