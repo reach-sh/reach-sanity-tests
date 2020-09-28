@@ -12,6 +12,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: docker id
+          command: docker info --format '{{.ID}}' 2>/dev/null
+      - run:
           name: setup
           command: sbin/setup.sh
       - run:
