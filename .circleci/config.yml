@@ -30,6 +30,9 @@ jobs:
           name: workshops_simple
           command: sbin/workshops_simple.sh
       - run:
+          name: test_init
+          command: sbin/test_init.sh
+      - run:
           name: check hs image is up to date
           command: sbin/hs.sh || echo 'allowed to fail'
       - run:
