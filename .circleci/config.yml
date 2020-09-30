@@ -34,10 +34,10 @@ jobs:
           command: sbin/test_init.sh
       - run:
           name: check hs image is up to date
-          command: sbin/hs.sh || echo 'allowed to fail'
+          command: sbin/hs.sh
       - run:
-          name: check js images is up to date
-          command: sbin/js.sh || echo 'allowed to fail'
+          name: check js images are up to date
+          command: sbin/js.sh
       - run:
           name: check algorand-devnet is up to date
           command: sbin/algorand_devnet.sh || echo 'allowed to fail'
