@@ -2,11 +2,11 @@
 set -ex
 
 # Usage:
-# sbin/image_check.sh reach REACHC_HASH hs
+# sbin/image_check.sh NAME SUBFOLDER
 
 NAME="$1"
-HASHNAME="$2"
-SUBFOLDER="$3"
+SUBFOLDER="$2"
+HASHNAME="REACH_GIT_HASH"
 
 VERSION=$(/tmp/reach numeric-version)
 HASH=$(docker run --entrypoint /bin/sh "reachsh/$NAME:$VERSION" -c 'echo $'"$HASHNAME")

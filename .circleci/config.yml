@@ -40,7 +40,7 @@ jobs:
           command: sbin/js.sh
       - run:
           name: check algorand-devnet is up to date
-          command: sbin/algorand_devnet.sh || echo 'allowed to fail'
+          command: sbin/algorand_devnet.sh
       - run:
           name: check ethereum-devnet is up to date
           command: sbin/ethereum_devnet.sh
