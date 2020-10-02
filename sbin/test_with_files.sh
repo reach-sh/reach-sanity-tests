@@ -10,3 +10,9 @@ for FILE in "$@" ; do
 done
 
 /tmp/reach run
+
+# Docker annoyingly runs as root on CircleCI
+if [ "x$CI" != "x" ] ; then
+  sudo chown "$(whoami)" build
+  sudo chown "$(whoami)" build/*
+fi
