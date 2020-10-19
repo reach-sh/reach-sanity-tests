@@ -16,3 +16,5 @@ if [ "x$CI" != "x" ] ; then
   sudo chown "$(whoami)" build
   sudo chown "$(whoami)" build/*
 fi
+
+/tmp/reach down
