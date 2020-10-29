@@ -46,8 +46,8 @@ jobs:
       - run:
           name: check ethereum-devnet is up to date
           command: sbin/ethereum_devnet.sh
-      - slack/status:
-          fail_only: true
+      - slack/notify:
+          event: fail
 
 x-default-job-setup: &default-job-setup
   context:
