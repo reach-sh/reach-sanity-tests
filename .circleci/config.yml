@@ -25,6 +25,9 @@ jobs:
           name: setup
           command: sbin/setup.sh
       - run:
+          name: hashes
+          command: sbin/hashes.sh
+      - run:
           name: overview
           command: sbin/overview.sh
       - run:
