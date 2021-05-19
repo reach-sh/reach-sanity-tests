@@ -8,6 +8,3 @@ sbin/simple_test.sh overview
 
 # Works w/o Makefile (ALGO only)
 sbin/simple_test_ALGO.sh overview
-
-# Works w/ Makefile
-sbin/simple_test.sh overview Makefile
