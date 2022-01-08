@@ -72,13 +72,13 @@ workflows:
       - shellcheck/check
 
   nightly:
-    triggers:
-    - schedule:
-        cron: "0 10 * * *" # 6am EDT
-        filters:
-          branches:
-            only:
-              - master
+    #triggers:
+    #- schedule:
+    #    cron: "0 10 * * *" # 6am EDT
+    #    filters:
+    #      branches:
+    #        only:
+    #          - master
     jobs:
       - sanity-check:
           <<: *default-job-setup
